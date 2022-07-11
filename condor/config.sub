@@ -1,0 +1,16 @@
+executable = /bin/bash
+error  = ./output/condor_logs/{errorfile}_$(ClusterId).$(ProcId).err
+output = ./output/condor_logs/{outfile}_$(ClusterId).$(ProcId).out
+log    = ./output/condor_logs/{logfile}_$(ClusterId).$(ProcId).log
+request_memory = 32768
+request_cpus = 6
+request_gpus = {gpus}
++WantGPUStats = true
+requirements = (TARGET.CUDADeviceName=="{gpu_name}")
+# EXIT SETTINGS
+on_exit_hold = (ExitCode =?= 3)
+on_exit_hold_reason = "Checkpointed, will resume"
+on_exit_hold_subcode = 2
+periodic_release = ( (JobStatus =?= 5) && (HoldReasonCode =?= 3) && (HoldReasonSubCode =?= 2) )
++RunningPriceExceededAction = "kill"
+queue

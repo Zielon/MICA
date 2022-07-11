@@ -1,0 +1,30 @@
+# Mica config
+
+pretrained_model_path: ''
+
+dataset:
+  root: '/scratch/NFC/MICA/dataset/'
+  training_data: [ 'LYHM', 'D3DFACS', 'BU3DFE', 'FRGC', 'Stirling', 'FaceWarehouse', 'BP4D' ]
+  eval_data: [ 'FLORENCE' ]
+  num_workers: 4
+  batch_size: 8
+  K: 2
+
+train:
+  lr: 1e-5
+  arcface_lr: 1e-5
+  weight_decay: 2e-4
+  use_mask: True
+  reset_optimizer: False
+  max_steps: 160000
+  log_steps: 50
+  val_steps: 300
+  vis_steps: 1200
+  val_save_img: 1200
+  checkpoint_steps: 1000
+  checkpoint_epochs_steps: 10000
+
+model:
+  use_pretrained: False
+  n_shape: 300
+  name: 'mica'

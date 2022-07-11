@@ -1,0 +1,71 @@
+# Compiled source #
+###################
+.idea
+
+datasets/creation/template/*
+statistics/*
+*.o
+*.so
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# 3D data #
+############
+*.mat
+*.obj
+*.dat
+*.npz
+*.pkl
+
+# python file #
+############
+*.pyc
+__pycache__
+
+## deca data
+data/FLAME2020/generic_model.pkl
+data/FLAME2020/female_model.pkl
+data/FLAME2020/male_model.pkl
+data/FLAME2020/FLAME_albedo_from_BFM.npz
+results
+output
+TestSamples
+
+## dump files
+__dump
+
+## visual code files
+.vscode
+
+shapes.pt
+partial
+images
+*.pt
+testing/now/jobs
+testing/now/logs
+testing/stirling/logs
+testing/stirling/jobs
+
+demo/arcface
+demo/output
