@@ -61,14 +61,14 @@ In the case of any questions feel free to <a href="mailto:&#109;&#105;&#099;&#09
   <tr></tr>
   <tr>
     <td><img src="../documents/FRGC.gif"></td>
-    <td><b>FRGC</b></td>
+    <td><b><a href="https://github.com/Zielon/MICA/tree/master/datasets/#bp4d-subset">*FRGC</a></b></td>
     <td>531</td>
     <td><a href="https://cvrl.nd.edu/projects/data/#face-recognition-grand-challenge-frgc-v20-data-collection" target="_blank">cvrl.nd.edu</a</td>
   </tr>
   <tr></tr>
   <tr>
     <td><img src="../documents/BP4D.gif"></td>
-    <td><b>BP4D+</b></td>
+    <td><b><a href="https://github.com/Zielon/MICA/tree/master/datasets/#frgc-subset">*BP4D+</a></b></td>
     <td>127</td>
     <td><a href="http://www.cs.binghamton.edu/~lijun/Research/3DFE/3DFE_Analysis.html" target="_blank">cs.binghamton.edu</a></td>
   </tr>
