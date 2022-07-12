@@ -54,7 +54,7 @@ In the case of any questions feel free to <a href="mailto:&#109;&#105;&#099;&#09
   <tr></tr>
   <tr>
     <td><img src="../documents/FRGC.gif"></td>
-    <td><b><a href="https://github.com/Zielon/MICA/tree/master/datasets/#bp4d-subset">*FRGC</a></b></td>
+    <td><b><a href="https://github.com/Zielon/MICA/tree/master/datasets/#frgc-subset">*FRGC</a></b></td>
     <td>531</td>
     <td><a href="https://cvrl.nd.edu/projects/data/#face-recognition-grand-challenge-frgc-v20-data-collection" target="_blank">cvrl.nd.edu</a</td>
   </tr>
