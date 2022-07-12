@@ -1,5 +1,6 @@
 <h2 align="center"><b>MICA - Dataset</b></h2>
-The **MICA** dataset consists of eight smaller datasets for about 2315 subjects, built by unifying existing small- and medium-scale datasets under a common FLAME topology. It consists of shape geometry only, therefore, to obtain images for each subject please refer to the primary dataset.
+
+The <b>MICA</b> dataset consists of eight smaller datasets for about 2315 subjects, built by unifying existing small- and medium-scale datasets under a common FLAME topology. It consists of shape geometry only, therefore, to obtain images for each subject please refer to the primary dataset.
 
 This dataset contains registration meshes together with corresponding fitted FLAME parameters. Actors are split between individual folders with a unique identifier based on the original dataset. The folder name of the parameters and mesh is the same as the ones in the analogous dataset with images. 
 
@@ -121,3 +122,14 @@ The original dataset contains 140 subjects from where we selected scans in neutr
 1) A group desiring to obtain FLAME results on the FRGC data must license the FRGC 2.0 data set from CVRL using the licensing procedure at the website: http://cvrl.nd.edu .
 2) Once the license form is completed and CVRL has approved it, an email will be sent from Globus indicating that you have been authorized to retrieve FRGC 2.0.
 3) That authorization will serve as authorization to receive any derivative work, therefore, please send a confirmation to mica [AT] tue.mpg.de address to receive the MICA dataset.
+
+### Citation
+If you use this dataset in your research please cite MICA:
+```bibtex
+@proceedings{MICA:ECCV2022,
+  author = {Zielonka, Wojciech and Bolkart, Timo and Thies, Justus},
+  title = {Towards Metrical Reconstruction of Human Faces},
+  journal = {European Conference on Computer Vision},
+  year = {2022}
+}
+```
