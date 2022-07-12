@@ -32,9 +32,13 @@ cd MICA
 ```
 you will be asked to provide `{flame_user}` and `{flame_password}` for your FLAME account in order to access the file server.
 
-### Pre-trained Model
+### Pre-trained Models
 
-If you decide to not use the installation script, the pretrained model can be found under the [MPI-IS storage server](https://keeper.mpdl.mpg.de/f/db172dc4bd4f4c0f96de/?dl=1). After downloading, please place it in the `/data/pretrained/mica.tar` location.
+If you decide to not use the installation script, the pretrained model can be found under the [MPI-IS storage server](https://keeper.mpdl.mpg.de/f/db172dc4bd4f4c0f96de/?dl=1). After downloading, please place it in the `/data/pretrained/mica.tar` location. Additionally, you will need to provide models for `inisghtface`:
+1) [antelopev2](https://keeper.mpdl.mpg.de/f/2d58b7fed5a74cb5be83/?dl=1)
+2) [buffalo_l](https://keeper.mpdl.mpg.de/f/8faabd353cfc457fa5c5/?dl=1)
+
+then you need to unzip them and place in `~/.insightface/models/`. The `install.sh` script does it for you.
 
 ### How To Use
 
@@ -53,7 +57,7 @@ The testing was done using two datasets, [Stirling](http://pics.stir.ac.uk/ESRC/
 ### Citation
 If you use this project in your research please cite MICA:
 ```bibtex
-@article{MICA:ECCV2022,
+@proceedings{MICA:ECCV2022,
   author = {Zielonka, Wojciech and Bolkart, Timo and Thies, Justus},
   title = {Towards Metrical Reconstruction of Human Faces},
   journal = {European Conference on Computer Vision},

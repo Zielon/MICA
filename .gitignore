@@ -57,7 +57,7 @@ __dump
 
 ## visual code files
 .vscode
-
+render_dataset.py
 shapes.pt
 partial
 images

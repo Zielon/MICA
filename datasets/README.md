@@ -8,18 +8,70 @@ To obtain the dataset please follow each link separately and request the given s
 In the case of any questions feel free to <a href="mailto:&#109;&#105;&#099;&#097;&#064;&#116;&#117;&#101;&#046;&#109;&#112;&#103;&#046;&#100;&#101;">email us</a>.
 
 <div align="center">
-
-| Dataset                    | Subjects | Source                                                                                                                       |
-|----------------------------|----------|------------------------------------------------------------------------------------------------------------------------------|
-| **Stirling**               | 133      | <a href="http://pics.stir.ac.uk/ESRC/" target="_blank">pics.stir.ac.uk</a>                                                   |
-| **D3DFACS**                | 10       | <a href="https://www.cs.bath.ac.uk/~dpc/D3DFACS/" target="_blank">cs.bath.ac.uk</a>                                          |
-| **Florence 2D/3D**         | 53       | <a href="https://www.micc.unifi.it/resources/datasets/florence-3d-faces/" target="_blank">micc.unifi.it</a>                  |
-| **BU-3DFE**                | 100      | <a href="https://www.cs.binghamton.edu/~lijun/Research/3DFE/3DFE_Analysis.html" target="_blank">cs.binghamton.edu</a>        |
-| **LYHM**                   | 1211     | <a href="https://www-users.cs.york.ac.uk/~nep/research/LYHM/" target="_blank">cs.york.ac.uk</a>                              |
-| **FaceWarehouse**          | 150      | <a href="http://kunzhou.net/zjugaps/facewarehouse/" target="_blank">kunzhou.net</a>                                          |
-| **[FRGC](#frgc-subset)**   | 531      | <a href="https://cvrl.nd.edu/projects/data/#face-recognition-grand-challenge-frgc-v20-data-collection" target="_blank">cvrl.nd.edu</a> |
-| **[BP4D+](#bp4d-subset)** | 127      | <a href="http://www.cs.binghamton.edu/~lijun/Research/3DFE/3DFE_Analysis.html" target="_blank">cs.binghamton.edu</a>           |
-
+<table cellspacing="0" cellpadding="0" bgcolor="#ffffff" border="0">
+  <tr>
+    <th>FLAME Renderings</th>
+    <th>Dataset</th>
+    <th>Subjects</th>
+    <th>Source</th>
+  </tr>
+  <tr></tr>
+  <tr>
+    <td><img src="../documents/STIRLING.gif"></td>
+    <td><b>Stirling</b></td>
+    <td>133</td>
+    <td><a href="http://pics.stir.ac.uk/ESRC/" target="_blank">pics.stir.ac.uk</a></td>
+  </tr>
+  <tr></tr>
+  <tr>
+    <td><img src="../documents/D3DFACS.gif"></td>
+    <td><b>D3DFACS</b></td>
+    <td>10</td>
+    <td><a href="https://www.cs.bath.ac.uk/~dpc/D3DFACS/" target="_blank">cs.bath.ac.uk</a></td>
+  </tr>
+  <tr></tr>
+  <tr>
+    <td><img src="../documents/FLORENCE.gif"></td>
+    <td><b>Florence 2D/3D</b></td>
+    <td>53</td>
+    <td><a href="https://www.micc.unifi.it/resources/datasets/florence-3d-faces/" target="_blank">micc.unifi.it</a></td>
+  </tr>
+  <tr></tr>
+  <tr>
+    <td><img src="../documents/BU3DFE.gif"></td>
+    <td><b>BU-3DFE</b></td>
+    <td>100</td>
+    <td><a href="https://www.cs.binghamton.edu/~lijun/Research/3DFE/3DFE_Analysis.html" target="_blank">cs.binghamton.edu</a></td>
+  </tr>
+  <tr></tr>
+  <tr>
+    <td><img src="../documents/LYHM.gif"></td>
+    <td><b>LYHM</b></td>
+    <td>1211</td>
+    <td><a href="https://www-users.cs.york.ac.uk/~nep/research/LYHM/" target="_blank">cs.york.ac.uk</a></td>
+  </tr>
+  <tr></tr>
+  <tr>
+    <td><img src="../documents/FACEWAREHOUSE.gif"></td>
+    <td><b>FaceWarehouse</b></td>
+    <td>150</td>
+    <td><a href="http://kunzhou.net/zjugaps/facewarehouse/" target="_blank">kunzhou.net</a></td>
+  </tr>
+  <tr></tr>
+  <tr>
+    <td><img src="../documents/FRGC.gif"></td>
+    <td><b>FRGC</b></td>
+    <td>531</td>
+    <td><a href="https://cvrl.nd.edu/projects/data/#face-recognition-grand-challenge-frgc-v20-data-collection" target="_blank">cvrl.nd.edu</a</td>
+  </tr>
+  <tr></tr>
+  <tr>
+    <td><img src="../documents/BP4D.gif"></td>
+    <td><b>BP4D+</b></td>
+    <td>127</td>
+    <td><a href="http://www.cs.binghamton.edu/~lijun/Research/3DFE/3DFE_Analysis.html" target="_blank">cs.binghamton.edu</a></td>
+  </tr>
+</table>
 </div>
 
 Each subset zip file has the following structure:
