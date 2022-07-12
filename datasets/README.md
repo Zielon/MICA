@@ -39,13 +39,6 @@ In the case of any questions feel free to <a href="mailto:&#109;&#105;&#099;&#09
   </tr>
   <tr></tr>
   <tr>
-    <td><img src="../documents/BU3DFE.gif"></td>
-    <td><b>BU-3DFE</b></td>
-    <td>100</td>
-    <td><a href="https://www.cs.binghamton.edu/~lijun/Research/3DFE/3DFE_Analysis.html" target="_blank">cs.binghamton.edu</a></td>
-  </tr>
-  <tr></tr>
-  <tr>
     <td><img src="../documents/LYHM.gif"></td>
     <td><b>LYHM</b></td>
     <td>1211</td>
