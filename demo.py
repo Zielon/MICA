@@ -29,7 +29,7 @@ from insightface.app import FaceAnalysis
 from insightface.app.common import Face
 from insightface.utils import face_align
 from loguru import logger
-from pytorch3d.io import save_ply
+from pytorch3d.io import save_ply, save_obj
 from skimage.io import imread
 from tqdm import tqdm
 
@@ -122,15 +122,23 @@ def main(cfg, args):
             opdict = mica.decode(codedict)
             meshes = opdict['pred_canonical_shape_vertices']
             code = opdict['pred_shape_code']
+            lmk = mica.flame.compute_landmarks(meshes)
+
             mesh = meshes[0]
+            landmark_51 = lmk[0, 17:]
+            landmark_7 = landmark_51[[19, 22, 25, 28, 16, 31, 37]]
             rendering = mica.render.render_mesh(mesh[None])
             image = (rendering[0].cpu().numpy().transpose(1, 2, 0).copy() * 255)[:, :, [2, 1, 0]]
             image = np.minimum(np.maximum(image, 0), 255).astype(np.uint8)
+
             dst = Path(args.o, name)
             dst.mkdir(parents=True, exist_ok=True)
             cv2.imwrite(f'{dst}/render.jpg', image)
-            save_ply(f'{dst}/mesh.ply', verts=mesh.cpu() * 1000.0, faces=faces)
-            np.save(f'{dst}/params', code[0].cpu().numpy())
+            save_ply(f'{dst}/mesh.ply', verts=mesh.cpu() * 1000.0, faces=faces)  # save in millimeters
+            save_obj(f'{dst}/mesh.obj', verts=mesh.cpu() * 1000.0, faces=faces)
+            np.save(f'{dst}/identity', code[0].cpu().numpy())
+            np.save(f'{dst}/kpt7', landmark_7.cpu().numpy() * 1000.0)
+            np.save(f'{dst}/kpt68', lmk.cpu().numpy() * 1000.0)
 
         logger.info(f'Processing finished. Results has been saved in {args.o}')
 
