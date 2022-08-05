@@ -39,13 +39,6 @@ In the case of any questions feel free to <a href="mailto:&#109;&#105;&#099;&#09
   </tr>
   <tr></tr>
   <tr>
-    <td><img src="../documents/BU3DFE.gif"></td>
-    <td><b>BU-3DFE</b></td>
-    <td>100</td>
-    <td><a href="https://www.cs.binghamton.edu/~lijun/Research/3DFE/3DFE_Analysis.html" target="_blank">cs.binghamton.edu</a></td>
-  </tr>
-  <tr></tr>
-  <tr>
     <td><img src="../documents/LYHM.gif"></td>
     <td><b>LYHM</b></td>
     <td>1211</td>
@@ -61,16 +54,9 @@ In the case of any questions feel free to <a href="mailto:&#109;&#105;&#099;&#09
   <tr></tr>
   <tr>
     <td><img src="../documents/FRGC.gif"></td>
-    <td><b><a href="https://github.com/Zielon/MICA/tree/master/datasets/#bp4d-subset">*FRGC</a></b></td>
+    <td><b><a href="https://github.com/Zielon/MICA/tree/master/datasets/#frgc-subset">*FRGC</a></b></td>
     <td>531</td>
     <td><a href="https://cvrl.nd.edu/projects/data/#face-recognition-grand-challenge-frgc-v20-data-collection" target="_blank">cvrl.nd.edu</a</td>
-  </tr>
-  <tr></tr>
-  <tr>
-    <td><img src="../documents/BP4D.gif"></td>
-    <td><b><a href="https://github.com/Zielon/MICA/tree/master/datasets/#frgc-subset">*BP4D+</a></b></td>
-    <td>127</td>
-    <td><a href="http://www.cs.binghamton.edu/~lijun/Research/3DFE/3DFE_Analysis.html" target="_blank">cs.binghamton.edu</a></td>
   </tr>
 </table>
 </div>
@@ -112,10 +98,6 @@ This dataset is for academic, non-commercial usage only. Moreover, it is an exte
 ### Additional Information
 
 Please note that some subsets do not have an identical amount of subjects due to registration errors. 
-
-#### BP4D+ Subset
-
-The original dataset contains 140 subjects from where we selected scans in neutral pose and successfully registered 127 FLAME meshes for them.
 
 #### FRGC Subset
 
