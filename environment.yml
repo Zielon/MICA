@@ -146,7 +146,7 @@ dependencies:
   - python_abi=3.8=2_cp38
   - pytorch=1.11.0=py3.8_cuda11.3_cudnn8.2.0_0
   - pytorch-mutex=1.0=cuda
-  - pytorch3d=0.7.0-py38_cu113_pyt1110
+  - pytorch3d=0.7.0=py38_cu113_pyt1110
   - pytz=2021.3=pyhd3eb1b0_0
   - pywavelets=1.1.1=py38h7b6447c_2
   - pyyaml=5.3.1=py38h7b6447c_1
