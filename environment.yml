@@ -1,6 +1,6 @@
 name: MICA
 channels:
-  - pytorch3d-nightly
+  - pytorch3d
   - pytorch
   - iopath
   - fvcore
