@@ -42,7 +42,7 @@ In the case of any questions feel free to <a href="mailto:&#109;&#105;&#099;&#09
     <td><img src="../documents/LYHM.gif"></td>
     <td><b>LYHM</b></td>
     <td>1211</td>
-    <td><a href="https://www-users.cs.york.ac.uk/~nep/research/LYHM/" target="_blank">cs.york.ac.uk</a></td>
+    <td><a href="https://www-users.cs.york.ac.uk/~nep/research/Headspace/" target="_blank">cs.york.ac.uk</a></td>
   </tr>
   <tr></tr>
   <tr>
