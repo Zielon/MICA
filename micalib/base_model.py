@@ -22,7 +22,6 @@ import torch
 import torch.nn as nn
 
 from configs.config import cfg
-from micalib.renderer import MeshShapeRenderer
 from models.flame import FLAME
 from utils.masking import Masking
 
@@ -88,7 +87,6 @@ class BaseModel(nn.Module):
         pass
 
     def setup_renderer(self, model_cfg):
-        self.render = MeshShapeRenderer(obj_filename=model_cfg.topology_path)
         self.verts_template_neutral = self.flame.v_template[None]
         self.verts_template = None
         self.verts_template_uv = None
