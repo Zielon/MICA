@@ -8,6 +8,7 @@
 <a href="https://youtu.be/vzzEbvv08VA" target="_blank">Video&nbsp</a>
 <a href="https://arxiv.org/pdf/2204.06607.pdf" target="_blank">Paper&nbsp</a>
 <a href="https://zielon.github.io/mica/" target="_blank">Project Website&nbsp</a>
+<a href="https://github.com/Zielon/metrical-tracker" target="_blank">Face Tracker&nbsp</a>
 <a href="https://github.com/Zielon/MICA/tree/master/datasets/" target="_blank"><b>Dataset&nbsp</b></a>
 <a href="https://keeper.mpdl.mpg.de/f/6b12c44378e64738b993/" target="_blank">Supplemental&nbsp</a>
 <a href="mailto:&#109;&#105;&#099;&#097;&#064;&#116;&#117;&#101;&#046;&#109;&#112;&#103;&#046;&#100;&#101;">Email</a>
@@ -16,6 +17,11 @@
 <div align="center"> 
 <img src="documents/teaser.jpg">
 <i style="font-size: 1.05em;">Official Repository for ECCV 2022 paper Towards Metrical Reconstruction of Human Faces</i>
+</div>
+<br>
+
+<div align="center"> 
+&#x26A0 The face tracker is now available under <a href="https://github.com/Zielon/metrical-tracker" target="_blank">Metrical Photometric Tracker&nbsp</a> &#x26A0
 </div>
 
 ### Installation
