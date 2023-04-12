@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Max-Planck-Gesellschaft zur Förderung der Wissenschaften e.V. (MPG) is
 # holder of all proprietary rights on this computer program.
 # You can only use this computer program if you have closed
@@ -19,6 +18,8 @@ import face_alignment
 import numpy as np
 from insightface.app import FaceAnalysis
 from loguru import logger
+
+from datasets.creation.util import get_bbox
 
 
 class Detectors:
@@ -55,8 +56,13 @@ class LandmarksDetector:
             if detected_faces is None:
                 return np.empty(0), np.empty(0)
             bboxes = np.stack(detected_faces)
+            # bboxes = get_bbox(img, np.stack(lmks))
+            # bboxes[:, 4] = detected_faces[:, 4]
             # https://github.com/Rubikplayer/flame-fitting/blob/master/data/landmarks_51_annotated.png
-            kpss = np.stack(lmks)[:, 17:, :][:, [19, 28, 16, 31, 37], :]  # left eye, right eye, nose, left mouth, right mouth
+            lmk51 = np.stack(lmks)[:, 17:, :]
+            kpss = lmk51[:, [20, 27, 13, 43, 47], :]  # left eye, right eye, nose, left mouth, right mouth
+            kpss[:, 0, :] = lmk51[:, [21, 24], :].mean(1)  # center of eye
+            kpss[:, 1, :] = lmk51[:, [27, 29], :].mean(1)
             return bboxes, kpss
 
         return None, None

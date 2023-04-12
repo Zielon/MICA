@@ -33,7 +33,7 @@ from skimage.io import imread
 from tqdm import tqdm
 
 from configs.config import get_cfg_defaults
-from datasets.creation.util import get_arcface_input, get_center
+from datasets.creation.util import get_arcface_input, get_center, draw_on
 from utils import util
 from utils.landmark_detector import LandmarksDetector, detectors
 
@@ -48,7 +48,7 @@ def deterministic(rank):
     cudnn.benchmark = False
 
 
-def process(args, app, image_size=224):
+def process(args, app, image_size=224, draw_bbox=False):
     dst = Path(args.a)
     dst.mkdir(parents=True, exist_ok=True)
     processes = []
@@ -70,8 +70,11 @@ def process(args, app, image_size=224):
         blob, aimg = get_arcface_input(face, img)
         file = str(Path(dst, name))
         np.save(file, blob)
-        cv2.imwrite(file + '.jpg', face_align.norm_crop(img, landmark=face.kps, image_size=image_size))
         processes.append(file + '.npy')
+        cv2.imwrite(file + '.jpg', face_align.norm_crop(img, landmark=face.kps, image_size=image_size))
+        if draw_bbox:
+            dimg = draw_on(img, [face])
+            cv2.imwrite(file + '_bbox.jpg', dimg)
 
     return processes
 
@@ -114,7 +117,7 @@ def main(cfg, args):
 
     with torch.no_grad():
         logger.info(f'Processing has started...')
-        paths = process(args, app)
+        paths = process(args, app, draw_bbox=False)
         for path in tqdm(paths):
             name = Path(path).stem
             images, arcface = to_batch(path)
