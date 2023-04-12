@@ -26,7 +26,6 @@ import numpy as np
 import torch
 import torch.backends.cudnn as cudnn
 import trimesh
-from insightface.app import FaceAnalysis
 from insightface.app.common import Face
 from insightface.utils import face_align
 from loguru import logger
@@ -36,6 +35,7 @@ from tqdm import tqdm
 from configs.config import get_cfg_defaults
 from datasets.creation.util import get_arcface_input, get_center
 from utils import util
+from utils.landmark_detector import LandmarksDetector, detectors
 
 
 def deterministic(rank):
@@ -56,8 +56,9 @@ def process(args, app, image_size=224):
     for image_path in tqdm(image_paths):
         name = Path(image_path).stem
         img = cv2.imread(image_path)
-        bboxes, kpss = app.det_model.detect(img, max_num=0, metric='default')
+        bboxes, kpss = app.detect(img)
         if bboxes.shape[0] == 0:
+            logger.error(f'[ERROR] Face not detected for {image_path}')
             continue
         i = get_center(bboxes, img)
         bbox = bboxes[i, 0:4]
@@ -109,8 +110,7 @@ def main(cfg, args):
     faces = mica.flameModel.generator.faces_tensor.cpu()
     Path(args.o).mkdir(exist_ok=True, parents=True)
 
-    app = FaceAnalysis(name='antelopev2', providers=['CUDAExecutionProvider'])
-    app.prepare(ctx_id=0, det_size=(224, 224))
+    app = LandmarksDetector(model=detectors.FAN)
 
     with torch.no_grad():
         logger.info(f'Processing has started...')
