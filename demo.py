@@ -110,7 +110,7 @@ def main(cfg, args):
     faces = mica.flameModel.generator.faces_tensor.cpu()
     Path(args.o).mkdir(exist_ok=True, parents=True)
 
-    app = LandmarksDetector(model=detectors.FAN)
+    app = LandmarksDetector(model=detectors.RETINAFACE)
 
     with torch.no_grad():
         logger.info(f'Processing has started...')
