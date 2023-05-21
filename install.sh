@@ -35,3 +35,5 @@ echo -e "\nInstalling conda env..."
 conda env create -f environment.yml
 
 echo -e "\nInstallation has finished!"
+
+conda activate MICA
