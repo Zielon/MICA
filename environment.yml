@@ -162,7 +162,7 @@ dependencies:
       - opencv-python-headless==4.6.0.66
       - packaging==21.3
       - prettytable==3.5.0
-      - protobuf==3.20.0
+      - protobuf
       - pyasn1==0.4.8
       - pyasn1-modules==0.2.8
       - pydrive2==1.15.0
