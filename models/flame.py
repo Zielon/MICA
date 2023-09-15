@@ -112,7 +112,7 @@ class FLAME(nn.Module):
                                           dynamic_lmk_b_coords,
                                           neck_kin_chain, dtype=torch.float32):
         """
-            Selects the face contour depending on the reletive position of the head
+            Selects the face contour depending on the relative position of the head
             Input:
                 vertices: N X num_of_vertices X 3
                 pose: N X full pose
