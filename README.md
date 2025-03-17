@@ -40,9 +40,9 @@ you will be asked to provide `{flame_user}` and `{flame_password}` for your FLAM
 
 ### Pre-trained Models
 
-If you decide to not use the installation script, the pretrained model can be found under the [MPI-IS storage server](https://keeper.mpdl.mpg.de/f/db172dc4bd4f4c0f96de/?dl=1). After downloading, please place it in the `/data/pretrained/mica.tar` location. Additionally, you will need to provide models for `inisghtface`:
-1) [antelopev2](https://keeper.mpdl.mpg.de/f/2d58b7fed5a74cb5be83/?dl=1)
-2) [buffalo_l](https://keeper.mpdl.mpg.de/f/8faabd353cfc457fa5c5/?dl=1)
+If you decide to not use the installation script, the pretrained model can be found under the [link](https://drive.google.com/file/d/1bYsI_spptzyuFmfLYqYkcJA6GZWZViNt/view?usp=sharing). After downloading, please place it in the `/data/pretrained/mica.tar` location. Additionally, you will need to provide models for `inisghtface`:
+1) [antelopev2](https://drive.google.com/file/d/16PWKI_RjjbE4_kqpElG-YFqe8FpXjads/view?usp=sharing)
+2) [buffalo_l](https://drive.google.com/file/d/1navJMy0DTr1_DHjLWu1i48owCPvXWfYc/view?usp=sharing)
 
 then you need to unzip them and place in `~/.insightface/models/`. The `install.sh` script does it for you.
 
@@ -63,7 +63,7 @@ The testing was done using two datasets, [Stirling](http://pics.stir.ac.uk/ESRC/
 ### Citation
 If you use this project in your research please cite MICA:
 ```bibtex
-@proceedings{MICA:ECCV2022,
+@proceedings{zielonka22mica,
   author = {Zielonka, Wojciech and Bolkart, Timo and Thies, Justus},
   title = {Towards Metrical Reconstruction of Human Faces},
   journal = {European Conference on Computer Vision},
