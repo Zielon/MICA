@@ -14,20 +14,26 @@ wget --post-data "username=$username&password=$password" 'https://download.is.tu
 unzip FLAME2020.zip -d data/FLAME2020/
 rm -rf FLAME2020.zip
 
+# Install gdown if not installed
+if ! command -v gdown &> /dev/null; then
+    echo "Installing gdown..."
+    pip install gdown
+fi
+
 echo -e "\nDownloading MICA..."
 mkdir -p data/pretrained/
-wget -O data/pretrained/mica.tar "https://keeper.mpdl.mpg.de/f/db172dc4bd4f4c0f96de/?dl=1"
+gdown --id 1bYsI_spptzyuFmfLYqYkcJA6GZWZViNt -O data/pretrained/mica.tar
 
 # https://github.com/deepinsight/insightface/issues/1896
 # Insightface has problems with hosting the models
 echo -e "\nDownloading insightface models..."
 mkdir -p ~/.insightface/models/
 if [ ! -d ~/.insightface/models/antelopev2 ]; then
-  wget -O ~/.insightface/models/antelopev2.zip "https://keeper.mpdl.mpg.de/f/2d58b7fed5a74cb5be83/?dl=1"
+  gdown --id 16PWKI_RjjbE4_kqpElG-YFqe8FpXjads -O ~/.insightface/models/antelopev2.zip
   unzip ~/.insightface/models/antelopev2.zip -d ~/.insightface/models/antelopev2
 fi
 if [ ! -d ~/.insightface/models/buffalo_l ]; then
-  wget -O ~/.insightface/models/buffalo_l.zip "https://keeper.mpdl.mpg.de/f/8faabd353cfc457fa5c5/?dl=1"
+  gdown --id 1navJMy0DTr1_DHjLWu1i48owCPvXWfYc -O ~/.insightface/models/buffalo_l.zip
   unzip ~/.insightface/models/buffalo_l.zip -d ~/.insightface/models/buffalo_l
 fi
 
