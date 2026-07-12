@@ -22,18 +22,18 @@ fi
 
 echo -e "\nDownloading MICA..."
 mkdir -p data/pretrained/
-gdown --id 1bYsI_spptzyuFmfLYqYkcJA6GZWZViNt -O data/pretrained/mica.tar
+gdown -O data/pretrained/mica.tar 1bYsI_spptzyuFmfLYqYkcJA6GZWZViNt
 
 # https://github.com/deepinsight/insightface/issues/1896
 # Insightface has problems with hosting the models
 echo -e "\nDownloading insightface models..."
 mkdir -p ~/.insightface/models/
 if [ ! -d ~/.insightface/models/antelopev2 ]; then
-  gdown --id 16PWKI_RjjbE4_kqpElG-YFqe8FpXjads -O ~/.insightface/models/antelopev2.zip
+  gdown -O ~/.insightface/models/antelopev2.zip 16PWKI_RjjbE4_kqpElG-YFqe8FpXjads
   unzip ~/.insightface/models/antelopev2.zip -d ~/.insightface/models/antelopev2
 fi
 if [ ! -d ~/.insightface/models/buffalo_l ]; then
-  gdown --id 1navJMy0DTr1_DHjLWu1i48owCPvXWfYc -O ~/.insightface/models/buffalo_l.zip
+  gdown -O ~/.insightface/models/buffalo_l.zip 1navJMy0DTr1_DHjLWu1i48owCPvXWfYc
   unzip ~/.insightface/models/buffalo_l.zip -d ~/.insightface/models/buffalo_l
 fi
 
