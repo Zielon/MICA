@@ -102,6 +102,7 @@ dependencies:
   - pillow=9.2.0=py39hace64e9_1
   - pip=22.2.2=py39h06a4308_0
   - pycparser=2.21=pyhd3eb1b0_0
+  - pyglet
   - pyopenssl=22.0.0=pyhd3eb1b0_0
   - pysocks=1.7.1=py39h06a4308_0
   - python=3.9.15=h7a1cb2a_2

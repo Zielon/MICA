@@ -3,8 +3,11 @@ urle () { [[ "${1}" ]] || return 1; local LANG=C i x; for (( i = 0; i < ${#1}; i
 
 # username and password input
 echo -e "\nIf you do not have an account you can register at https://flame.is.tue.mpg.de/ following the installation instruction."
-read -p "Username (FLAME):" username
-read -p "Password (FLAME):" password
+# Credentials can be supplied via FLAME_USERNAME / FLAME_PASSWORD to skip the prompts
+[[ -z "$FLAME_USERNAME" ]] && read -p "Username (FLAME):" FLAME_USERNAME
+[[ -z "$FLAME_PASSWORD" ]] && read -s -p "Password (FLAME):" FLAME_PASSWORD
+username="$FLAME_USERNAME"
+password="$FLAME_PASSWORD"
 username=$(urle $username)
 password=$(urle $password)
 
@@ -22,18 +25,18 @@ fi
 
 echo -e "\nDownloading MICA..."
 mkdir -p data/pretrained/
-gdown --id 1bYsI_spptzyuFmfLYqYkcJA6GZWZViNt -O data/pretrained/mica.tar
+gdown -O data/pretrained/mica.tar 1bYsI_spptzyuFmfLYqYkcJA6GZWZViNt
 
 # https://github.com/deepinsight/insightface/issues/1896
 # Insightface has problems with hosting the models
 echo -e "\nDownloading insightface models..."
 mkdir -p ~/.insightface/models/
 if [ ! -d ~/.insightface/models/antelopev2 ]; then
-  gdown --id 16PWKI_RjjbE4_kqpElG-YFqe8FpXjads -O ~/.insightface/models/antelopev2.zip
+  gdown -O ~/.insightface/models/antelopev2.zip 16PWKI_RjjbE4_kqpElG-YFqe8FpXjads
   unzip ~/.insightface/models/antelopev2.zip -d ~/.insightface/models/antelopev2
 fi
 if [ ! -d ~/.insightface/models/buffalo_l ]; then
-  gdown --id 1navJMy0DTr1_DHjLWu1i48owCPvXWfYc -O ~/.insightface/models/buffalo_l.zip
+  gdown -O ~/.insightface/models/buffalo_l.zip 1navJMy0DTr1_DHjLWu1i48owCPvXWfYc
   unzip ~/.insightface/models/buffalo_l.zip -d ~/.insightface/models/buffalo_l
 fi
 
