@@ -63,6 +63,31 @@ def load_checkpoint(path, mica, device):
     if 'flameModel' in checkpoint:
         mica.flameModel.load_state_dict(checkpoint['flameModel'])
 
+def run_generator(image, cfg = get_cfg_defaults()):
+    device = 'cuda:0' if torch.cuda.is_available() else 'cpu'
+    cfg.model.testing = True
+    mica = util.find_model_using_name(model_dir='micalib.models', model_name=cfg.model.name)(cfg, device)
+    load_checkpoint('data/pretrained/mica.tar', mica, device)
+    mica.eval()
+
+    faces = mica.flameModel.generator.faces_tensor.cpu()
+    app = LandmarksDetector(model=detectors.RETINAFACE, device=device)
+
+    with torch.no_grad():
+        image, arcface = preprocess(image, app, device)
+
+        codedict = mica.encode(image, arcface)
+        opdict = mica.decode(codedict)
+        meshes = opdict['pred_canonical_shape_vertices']
+        code = opdict['pred_shape_code']
+        lmk = mica.flame.compute_landmarks(meshes)
+
+        mesh = meshes[0]
+        landmark_51 = lmk[0, 17:]
+        landmark_7 = landmark_51[[19, 22, 25, 28, 16, 31, 37]]
+
+        # vertices exported in millimeters, matching demo.py
+        return trimesh.Trimesh(vertices=mesh.cpu() * 1000.0, faces=faces, process=False)
 
 def main(cfg, args):
     device = 'cuda:0' if torch.cuda.is_available() else 'cpu'
