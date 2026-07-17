@@ -23,6 +23,7 @@ from configs.config import get_cfg_defaults
 from datasets.creation.util import get_arcface_input, get_center
 from utils import util
 from utils.landmark_detector import LandmarksDetector, detectors
+from pathlib import Path
 
 
 def deterministic(rank):
@@ -67,7 +68,7 @@ def run_generator(image, cfg = get_cfg_defaults()):
     device = 'cuda:0' if torch.cuda.is_available() else 'cpu'
     cfg.model.testing = True
     mica = util.find_model_using_name(model_dir='micalib.models', model_name=cfg.model.name)(cfg, device)
-    load_checkpoint('data/pretrained/mica.tar', mica, device)
+    load_checkpoint(Path(__file__).absolute().parent / 'data/pretrained/mica.tar', mica, device)
     mica.eval()
 
     faces = mica.flameModel.generator.faces_tensor.cpu()
