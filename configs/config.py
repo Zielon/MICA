@@ -37,7 +37,7 @@ cfg.model.testing = False
 cfg.model.name = 'mica'
 
 cfg.model.topology_path = os.path.join(cfg.mica_dir, 'data/FLAME2020', 'head_template.obj')
-cfg.model.flame_model_path = os.path.join(cfg.mica_dir, 'data/FLAME2020', 'generic_model.pkl')
+cfg.model.flame_model_path = os.path.join(cfg.mica_dir, 'data/FLAME2020/FLAME2020', 'generic_model.pkl')
 cfg.model.flame_lmk_embedding_path = os.path.join(cfg.mica_dir, 'data/FLAME2020', 'landmark_embedding.npy')
 cfg.model.n_shape = 300
 cfg.model.layers = 8

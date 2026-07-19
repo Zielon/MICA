@@ -36,8 +36,10 @@ class LandmarksDetector:
         model = model.upper()
         self.predictor = model
         if model == detectors.RETINAFACE:
-            self._face_detector = FaceAnalysis(name='antelopev2', providers=['CUDAExecutionProvider'])
-            self._face_detector.prepare(ctx_id=0, det_size=(224, 224))
+            use_cuda = device.startswith('cuda')
+            providers = ['CUDAExecutionProvider'] if use_cuda else ['CPUExecutionProvider']
+            self._face_detector = FaceAnalysis(name='antelopev2', providers=providers)
+            self._face_detector.prepare(ctx_id=0 if use_cuda else -1, det_size=(224, 224))
         elif model == detectors.FAN:
             self._face_detector = face_alignment.FaceAlignment(face_alignment.LandmarksType._2D, device=device)
         else:

@@ -47,7 +47,7 @@ class Masking(nn.Module):
             ss = pickle.load(f, encoding='latin1')
             self.masks = Struct(**ss)
 
-        with open(f'{ROOT_DIR}/data/FLAME2020/generic_model.pkl', 'rb') as f:
+        with open(f'{ROOT_DIR}/data/FLAME2020/FLAME2020/generic_model.pkl', 'rb') as f:
             ss = pickle.load(f, encoding='latin1')
             flame_model = Struct(**ss)
 

@@ -69,3 +69,7 @@ testing/stirling/jobs
 
 demo/arcface
 demo/output
+
+## jupyter checkpoints
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
